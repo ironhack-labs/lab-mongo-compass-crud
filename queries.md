@@ -29,12 +29,17 @@ projection: {name:1, category_code:1, founded_year:1, _id:0}
 
 ## 6. Find all the companies that have been **founded** on the 2000 or have 20 **employees**. Sort them descendingly by their `number_of_employees`.
 
-query: {category_code: 'enterprise', founded_year: 2000}
-projection: {name:1, category_code:1, founded_year:1, _id:0}
+query: {$or: [{founded_year:2000}, {number_of_employees: 20}]}
+sort: {number_of_employees: -1}
 
 ## 7. Find all the companies that do not include `web` nor `social` on their **category_code**. Limit the search to 20 documents and retrieve only their `name` and `category_code`.
 
+query: {category_code: {$nin: [ 'web', 'social']}}
+limit 20
+
 ## 8. Find all the companies that were not **founded** on 'June'. Skip the first 50 results and retrieve only the `founded_month` and `name` fields.
+
+query: {category_code: {$nin: [ 'web', 'social']}}
 
 ## 9. Find all the companies that have 50 employees, but do not correspond to the 'web' **category_code**. 
 
