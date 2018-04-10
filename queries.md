@@ -41,7 +41,7 @@ db.companies.find({founded_month:{$ne:6}}, {name:1, founded_month:1}).skip(50)
 
 ## 9. Find all the companies that have 50 employees, but do not correspond to the 'web' **category_code**. 
 
-db.companies.find({category_code:{$ne:"web"}, number_of_employees:50}, {name:1, category_code:1, number_of_employees:1})
+db.companies.find({category_code:{$ne:"web"}, number_of_employees:50}, {name:1, category_code:1, number_of_employees:1, _id:0})
 
 ## 10. Find all the companies that have been founded on the 1st of the month, but does not have either 50 employees nor 'web' as their **category_code**. Retrieve only the `founded_day` and `name` and limit the search to 5 documents.
 
@@ -50,8 +50,9 @@ db.companies.find({$nor:[{number_of_employees:50}, {category_code:"web"}], found
 
 ## 11. Find all the companies which the `price_amount` of the `acquisition` was **`40.000.000`**. Sort them by `name`.
 
-db.companies.find({acquisitions:{$elemMatch:{price_amount:40000000}}},{name:1, _id:0}).sort({name:1})
+db.companies.find({'acquisition.price_amount':40000000},{name:1, _id:0}).sort({name:1})
 
 ## 12. Find all the companies that have been acquired on January of 2014. Retrieve only the `acquisition` and `name` fields.
 
-<!-- db.companies.find({acquisitions:{$elemMatch:[{$and:[{acquired_month:1},{acquired_year:2014}]}}},{name:1, acquisitions:1, _id:0}).pretty() -->
+db.companies.find({ $and: [ { 'acquisition.acquired_month':1 }, { 'acquisition.acquired_year':2014 } ] }, {name:1, acquisition:1, _id:0}).pretty()
+
