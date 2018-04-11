@@ -49,4 +49,4 @@
 
 ## 12. Find all the companies that have been acquired on January of 2014. Retrieve only the `acquisition` and `name` fields.
 
-  - db.companies.find({founded_month: 1, founded_year: 2004}, {acquisition:1, name:1, _id:0})
+  - db.companies.find({'adquisition.adquired-year': 2004, 'adquisition.adquired-month': 1}, {acquisition:1, name:1, _id:0})
