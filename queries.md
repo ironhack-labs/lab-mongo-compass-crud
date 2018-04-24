@@ -132,7 +132,7 @@
  filter: {
   $and: [
    {
-    founded_month: 1
+    founded_day: 1
    },
    {
     $nor: [
