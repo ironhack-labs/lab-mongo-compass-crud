@@ -20,7 +20,7 @@
 
 ## 4. Find all the companies who have `web` as their **category_code**, but limit the search to 50 companies.
 
-- **`query`**: {name: 'Twitter'}
+- **`query`**: {category_code: 'web'}
 
 -**`limit`**: 50
 
