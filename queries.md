@@ -13,13 +13,75 @@
 
 ## 3. Find all the companies named "Twitter", and retrieve only their `name`, `category_code` and `founded_year` fields.
 
+- **`query`**: {name: 'Twitter'}
+- **`projection`**: {name: 1, category_code: 1, founded_year: 1, _id: 0}
+
 ## 4. Find all the companies who have `web` as their **category_code**, but limit the search to 50 companies.
+
+FILTER
+{category_code: 'web'}
+
+PROJECT
+{ field: 0 }
+​
+SORT
+​
+SKIP
+0
+
+LIMIT
+50
 
 ## 5. Find all the companies which **category_code** is 'enterprise' and have been founded in 2005. Retrieve only the `name`, `category_code` and `founded_year` fields.
 
+FILTER
+{category_code: 'enterprise'}
+
+PROJECT
+{name: 1, category_code: 1, founded_year: 1, _id: 0}
+
+SORT
+​
+SKIP
+0
+LIMIT
+0
+
 ## 6. Find all the companies that have been **founded** on the 2000 or have 20 **employees**. Sort them descendingly by their `number_of_employees`.
 
+FILTER
+{$or: [{founded_year: 2000}, {number_of_employees: 20}]}
+
+PROJECT
+{ field: 0 }
+​
+SORT
+{number_of_employees: -1}
+
+SKIP
+0
+
+LIMIT
+0
+
+
 ## 7. Find all the companies that do not include `web` nor `social` on their **category_code**. Limit the search to 20 documents and retrieve only their `name` and `category_code`.
+
+FILTER
+
+{$nor: [{category_code: "web"}, {category_code: "social"}]}
+PROJECT
+
+{name: 1, category_code: 1, _id: 0}
+SORT
+
+{ field: -1 }
+​
+SKIP
+0
+LIMIT
+20
+
 
 ## 8. Find all the companies that were not **founded** on 'June'. Skip the first 50 results and retrieve only the `founded_month` and `name` fields.
 
