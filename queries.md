@@ -13,9 +13,17 @@
 
 ## 3. Find all the companies named "Twitter", and retrieve only their `name`, `category_code` and `founded_year` fields.
 
+ - **`query`**: {name: 'twitter'}
+ - **`projection`**: {name: 1,category_code:1,founded_year:1, _id: 0}
+
 ## 4. Find all the companies who have `web` as their **category_code**, but limit the search to 50 companies.
 
+ - **`query`**: {category_code: 'web'}
+ - **`limit`**: 50
+
 ## 5. Find all the companies which **category_code** is 'enterprise' and have been founded in 2005. Retrieve only the `name`, `category_code` and `founded_year` fields.
+
+
 
 ## 6. Find all the companies that have been **founded** on the 2000 or have 20 **employees**. Sort them descendingly by their `number_of_employees`.
 
