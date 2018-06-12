@@ -39,6 +39,10 @@
 
 ## 8. Find all the companies that were not **founded** on 'June'. Skip the first 50 results and retrieve only the `founded_month` and `name` fields.
 
+ - **`query`**: {founded_month:{$ne:"June"}}
+  - **`projection`**: {founded_month:1,name:1,_id:0}
+  - **`skip`**: 50
+
 ## 9. Find all the companies that have 50 employees, but do not correspond to the 'web' **category_code**. 
 
 ## 10. Find all the companies that have been founded on the 1st of the month, but does not have either 50 employees nor 'web' as their **category_code**. Retrieve only the `founded_day` and `name` and limit the search to 5 documents.
