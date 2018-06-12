@@ -1,6 +1,6 @@
 ![Ironhack Logo](https://i.imgur.com/1QgrNNw.png)
 
-# Answers
+# Answers 
 
 ## 1. Find all the companies that include 'Facebook' on the **name** field.
 
