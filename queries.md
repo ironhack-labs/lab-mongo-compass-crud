@@ -33,6 +33,10 @@
 
 ## 7. Find all the companies that do not include `web` nor `social` on their **category_code**. Limit the search to 20 documents and retrieve only their `name` and `category_code`.
 
+ - **`query`**: {$nor:[{category_code:"web"},{category_code:"social"}]}
+  - **`projection`**: {name:1,category_code:1,_id:0}
+   - **`limit`**: 20
+
 ## 8. Find all the companies that were not **founded** on 'June'. Skip the first 50 results and retrieve only the `founded_month` and `name` fields.
 
 ## 9. Find all the companies that have 50 employees, but do not correspond to the 'web' **category_code**. 
