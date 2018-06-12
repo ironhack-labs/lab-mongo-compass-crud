@@ -23,7 +23,8 @@
 
 ## 5. Find all the companies which **category_code** is 'enterprise' and have been founded in 2005. Retrieve only the `name`, `category_code` and `founded_year` fields.
 
-
+ - **`query`**: {$and:[{category_code: 'enterprise'},{founded_year:2005}]}
+  - **`projection`**: {name: 1,category_code:1,founded_year:1, _id: 0}
 
 ## 6. Find all the companies that have been **founded** on the 2000 or have 20 **employees**. Sort them descendingly by their `number_of_employees`.
 
