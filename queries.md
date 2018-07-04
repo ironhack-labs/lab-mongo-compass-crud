@@ -6,11 +6,6 @@ sort: /You should copy/paste the sort in here/
 skip: /You should copy/paste the skip in here/
 limit: /You should copy/paste the limit in here/
 
-query:
-projection:
-sort:
-skip:
-limit:
 
 # Answers
 
