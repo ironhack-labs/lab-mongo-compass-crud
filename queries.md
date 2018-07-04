@@ -12,7 +12,6 @@ sort:
 skip:
 limit:
 
-// Monserrat Monrroy.
 # Answers
 
 ## 1. Find all the companies that include 'Facebook' on the **name** field.
