@@ -18,7 +18,7 @@
 
 ## 4. Find all the companies who have `web` as their **category_code**, but limit the search to 50 companies.
 
- - **`query`**: {name:'Twitter'}{category_code:'enterprise',founded_year:2005}
+ - **`query`**: {category_code:'enterprise',founded_year:2005}
  - **`limit`**: 50  
 
 ## 5. Find all the companies which **category_code** is 'enterprise' and have been founded in 2005. Retrieve only the `name`, `category_code` and `founded_year` fields.
