@@ -60,5 +60,5 @@
 
 ## 12. Find all the companies that have been acquired on January of 2014. Retrieve only the `acquisition` and `name` fields.
 
-- **`query`**: {"acquisition[acquired_year]": 2014, "acquisition[acquired_month]": 1}
+- **`query`**: {"acquisition.acquired_year": 2014, "acquisition.acquired_month": 1}
 - **`projection`**: {acquisition: 1, name: 1, _id: 0}
