@@ -3,12 +3,8 @@
 # Answers
 
 ## 1. Find all the companies that include 'Facebook' on the **name** field.
-
-  db.companies.find({name:"Facebook"})
-
- 
- ## 2. Find all the companies which **category_code** is 'web'. Retrive only their `name` field:
-
+  db.companies.find({name:"Facebook"}) 
+## 2. Find all the companies which **category_code** is 'web'. Retrive only their `name` field:
 db.companies.find({category_code:"web"},{name:1,_id:0})
 
 
