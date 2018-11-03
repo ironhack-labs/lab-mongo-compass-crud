@@ -52,9 +52,10 @@
 
 ## 11. Find all the companies which the `price_amount` of the `acquisition` was **`40.000.000`**. Sort them by `name`.
 
-- **`query`**:
+- **`query`**: {"acquisition.price_amount": 40000000}
 - **`sort`**: {name: 1}
 
 ## 12. Find all the companies that have been acquired on January of 2014. Retrieve only the `acquisition` and `name` fields.
 
-- **`query`**:
+- **`query`**: {$and:[{"acquisition.acquired_month": 1}, {"acquisition.acquired_year": 2014}]}
+- **`projection`**: {name: 1, acquisition: 1, _id: 0}
